@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1F6C071AAE5C5C000E1D45 /* InstagramAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F6C061AAE5C5C000E1D45 /* InstagramAPIClient.swift */; };
+		1E1F6C091AAE6451000E1D45 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F6C081AAE6451000E1D45 /* PhotoManager.swift */; };
+		1E1F6C0E1AAE6A65000E1D45 /* Caption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F6C0D1AAE6A65000E1D45 /* Caption.swift */; };
+		1E1F6C101AAE6AA2000E1D45 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F6C0F1AAE6AA2000E1D45 /* Photo.swift */; };
 		1ED11B751AAA9B09006F3302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED11B741AAA9B09006F3302 /* AppDelegate.swift */; };
 		1ED11B771AAA9B0A006F3302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED11B761AAA9B0A006F3302 /* ViewController.swift */; };
 		1ED11B7A1AAA9B0B006F3302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED11B781AAA9B0B006F3302 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E1F6C061AAE5C5C000E1D45 /* InstagramAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPIClient.swift; sourceTree = "<group>"; };
+		1E1F6C081AAE6451000E1D45 /* PhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		1E1F6C0D1AAE6A65000E1D45 /* Caption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Caption.swift; sourceTree = "<group>"; };
+		1E1F6C0F1AAE6AA2000E1D45 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1ED11B6F1AAA9B09006F3302 /* InstagramViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED11B731AAA9B09006F3302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ED11B741AAA9B09006F3302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E1F6C0C1AAE6A47000E1D45 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				1E1F6C0D1AAE6A65000E1D45 /* Caption.swift */,
+				1E1F6C0F1AAE6AA2000E1D45 /* Photo.swift */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		1ED055551AAACD5A00F97FCC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E1F6C0C1AAE6A47000E1D45 /* DataModels */,
+				1E1F6C061AAE5C5C000E1D45 /* InstagramAPIClient.swift */,
+				1E1F6C081AAE6451000E1D45 /* PhotoManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1ED055561AAACD6400F97FCC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1ED11B761AAA9B0A006F3302 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		1ED11B661AAA9B08006F3302 = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +119,9 @@
 		1ED11B711AAA9B09006F3302 /* InstagramViewer */ = {
 			isa = PBXGroup;
 			children = (
+				1ED055551AAACD5A00F97FCC /* Models */,
+				1ED055561AAACD6400F97FCC /* Controllers */,
 				1ED11B741AAA9B09006F3302 /* AppDelegate.swift */,
-				1ED11B761AAA9B0A006F3302 /* ViewController.swift */,
 				1ED11B781AAA9B0B006F3302 /* Main.storyboard */,
 				1ED11B7B1AAA9B0B006F3302 /* Images.xcassets */,
 				1ED11B7D1AAA9B0B006F3302 /* LaunchScreen.xib */,
@@ -287,8 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1F6C101AAE6AA2000E1D45 /* Photo.swift in Sources */,
+				1E1F6C071AAE5C5C000E1D45 /* InstagramAPIClient.swift in Sources */,
 				1ED11B771AAA9B0A006F3302 /* ViewController.swift in Sources */,
+				1E1F6C091AAE6451000E1D45 /* PhotoManager.swift in Sources */,
 				1ED11B751AAA9B09006F3302 /* AppDelegate.swift in Sources */,
+				1E1F6C0E1AAE6A65000E1D45 /* Caption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
