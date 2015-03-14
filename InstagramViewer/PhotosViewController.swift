@@ -12,12 +12,10 @@ class PhotosViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: "refreshData", forControlEvents: .ValueChanged)
+        self.refreshData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,27 +25,17 @@ class PhotosViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return PhotoManager.sharedManager().photoList.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as UITableViewCell
+        let photo = PhotoManager.sharedManager().photoList[indexPath.row]
+        
+        cell.textLabel?.text = photo.caption?.username
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,5 +81,15 @@ class PhotosViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func refreshData() {
+        self.refreshControl?.beginRefreshing()
+        
+        PhotoManager.sharedManager().getPopular({ (error) in
+            if error != nil { println(error) }
+            
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        })
+    }
 }

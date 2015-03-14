@@ -32,16 +32,16 @@ class PhotoManager: NSObject {
         return photo
     }
     
-    func getPopular(success: (([Photo]) -> Void)?, failure: ((NSError?) -> Void)?) {
-        InstagramAPIClient.sharedClient().getPopular({ (json) in
-            if let array = json["data"].array {
-                array.map({ (elem: JSON) in self.photoList.append(self.parseData(elem))})
-                println(self.photoList)
-                success?(self.photoList)
+    func getPopular(completionHandler: ((NSError?) -> Void)?) {
+        InstagramAPIClient.sharedClient().getPopular({ (json, error) in
+            if error == nil {
+                if let array = json!["data"].array {
+                    self.photoList = array.map({ (elem: JSON) in self.parseData(elem)})
+                    completionHandler?(nil)
+                }
+            } else {
+                completionHandler?(error)
             }
-        }, failure: { (error) in
-            println(error)
-            failure?(error)
         })
     }
 }

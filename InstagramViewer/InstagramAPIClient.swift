@@ -21,14 +21,13 @@ class InstagramAPIClient: NSObject {
         return Singleton.instance
     }
     
-    func getPopular(success: ((JSON) -> Void)?, failure: ((NSError?) -> Void)?) {
-        Alamofire.request(.GET, url, parameters: param).responseJSON { (req, res, json, error) in
+    func getPopular(completionHandler: ((JSON?, NSError?) -> Void)?) {
+        Alamofire.request(.GET, url, parameters: param).responseJSON { (req, res, data, error) in
             if error == nil {
-                let data = JSON(json!)
-                success?(data)
+                let json = JSON(data!)
+                completionHandler?(json, error)
             } else {
-                println(error)
-                failure?(error)
+                completionHandler?(nil, error)
             }
         }
     }

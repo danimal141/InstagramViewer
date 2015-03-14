@@ -78,6 +78,13 @@
 			name = DataModels;
 			sourceTree = "<group>";
 		};
+		1E96B8971AB3E44900EF44E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		1ED055551AAACD5A00F97FCC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +128,7 @@
 			children = (
 				1ED055551AAACD5A00F97FCC /* Models */,
 				1ED055561AAACD6400F97FCC /* Controllers */,
+				1E96B8971AB3E44900EF44E0 /* Views */,
 				1ED11B741AAA9B09006F3302 /* AppDelegate.swift */,
 				1ED11B781AAA9B0B006F3302 /* Main.storyboard */,
 				1ED11B7B1AAA9B0B006F3302 /* Images.xcassets */,

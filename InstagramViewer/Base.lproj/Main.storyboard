@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9wo-Zd-RRA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2se-Pa-1dT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Photos View Controller-->
+        <!--Popular Photos-->
         <scene sceneID="PFB-Yf-7y4">
             <objects>
                 <tableViewController id="9wo-Zd-RRA" customClass="PhotosViewController" customModule="InstagramViewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JUO-IL-wKl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" id="JUO-IL-wKl">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUO-IL-wKl" id="Dwf-xj-72B">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -25,8 +25,27 @@
                             <outlet property="delegate" destination="9wo-Zd-RRA" id="iff-NZ-23e"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Popular Photos" id="ajr-b1-mC7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXy-Xu-jD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4qB-Z3-5TA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2se-Pa-1dT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VAh-KQ-VqO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9wo-Zd-RRA" kind="relationship" relationship="rootViewController" id="cTl-wE-Iom"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JDQ-4p-CoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="601" y="378"/>
         </scene>
