@@ -12,6 +12,7 @@ class PhotosViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorColor = UIColor.clearColor() //hide the line
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: "refreshData", forControlEvents: .ValueChanged)
@@ -30,11 +31,15 @@ class PhotosViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as PhotoViewCell
         let photo = PhotoManager.sharedManager().photoList[indexPath.row]
         
-        cell.textLabel?.text = photo.caption?.username
-        return cell
+        return cell.configure(photo)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let photo = PhotoManager.sharedManager().photoList[indexPath.row]
+        return PhotoViewCell.rowHeight(photo)
     }
 
     /*
