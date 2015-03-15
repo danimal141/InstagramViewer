@@ -79,7 +79,7 @@
 				1E1F6C0D1AAE6A65000E1D45 /* Caption.swift */,
 				1E1F6C0F1AAE6AA2000E1D45 /* Photo.swift */,
 			);
-			name = DataModels;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		1E96B8971AB3E44900EF44E0 /* Views */ = {
@@ -87,7 +87,7 @@
 			children = (
 				1E96B89A1AB46C9D00EF44E0 /* PhotoViewCell.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1ED055551AAACD5A00F97FCC /* Models */ = {
@@ -97,7 +97,7 @@
 				1E1F6C061AAE5C5C000E1D45 /* InstagramAPIClient.swift */,
 				1E1F6C081AAE6451000E1D45 /* PhotoManager.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1ED055561AAACD6400F97FCC /* Controllers */ = {
@@ -106,7 +106,7 @@
 				1E96B8951AB3C03A00EF44E0 /* PhotosViewController.swift */,
 				1E27674C1AB54EC700B91E71 /* PhotoViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1ED11B661AAA9B08006F3302 = {
@@ -149,7 +149,7 @@
 			children = (
 				1ED11B731AAA9B09006F3302 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1ED11B871AAA9B0C006F3302 /* InstagramViewerTests */ = {
@@ -166,7 +166,7 @@
 			children = (
 				1ED11B891AAA9B0C006F3302 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		393508E9ADB8B573293AB6DA /* Pods */ = {
@@ -468,7 +468,7 @@
 			baseConfigurationReference = E8FC3C8442E8F5A7E110BB24 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = InstagramViewer/Info.plist;
+				INFOPLIST_FILE = "InstagramViewer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -479,7 +479,7 @@
 			baseConfigurationReference = 7748DCE43B3B14B4551C4C64 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = InstagramViewer/Info.plist;
+				INFOPLIST_FILE = "InstagramViewer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -497,7 +497,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InstagramViewerTests/Info.plist;
+				INFOPLIST_FILE = "InstagramViewerTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstagramViewer.app/InstagramViewer";
@@ -512,7 +512,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InstagramViewerTests/Info.plist;
+				INFOPLIST_FILE = "InstagramViewerTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstagramViewer.app/InstagramViewer";
