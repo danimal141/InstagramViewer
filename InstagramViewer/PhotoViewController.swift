@@ -18,7 +18,7 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
 
         let data = NSData(contentsOfURL: self.photo!.standardURL!)
-        self.standardImage!.image = UIImage(data: data!)
+        self.standardImage.image = UIImage(data: data!)
     }
 
     override func didReceiveMemoryWarning() {

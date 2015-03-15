@@ -12,6 +12,7 @@ class PhotosViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.separatorColor = UIColor.clearColor() //hide the line
         
         self.refreshControl = UIRefreshControl()
@@ -53,7 +54,6 @@ class PhotosViewController: UITableViewController {
                 photoViewController.photo = photo
             }
         }
-        
     }
     
     func refreshData() {
@@ -63,6 +63,7 @@ class PhotosViewController: UITableViewController {
             if error != nil { println(error) }
             
             self.tableView.reloadData()
+            self.tableView.setNeedsLayout()
             self.refreshControl?.endRefreshing()
         })
     }

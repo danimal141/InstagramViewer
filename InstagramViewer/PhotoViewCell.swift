@@ -25,6 +25,7 @@ class PhotoViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.imageView?.image = nil
+        self.textLabel?.text = nil
     }
     
     class func rowHeight(photo: Photo) -> CGFloat {
@@ -34,10 +35,17 @@ class PhotoViewCell: UITableViewCell {
     func configure(photo: Photo) -> PhotoViewCell {
         self.textLabel?.text = photo.caption?.text
         
-        let data = NSData(contentsOfURL: photo.thumbnailURL!)
-        self.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-        self.imageView?.image = UIImage(data: data!)
-        self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        let q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let q_main = dispatch_get_main_queue()
+        dispatch_async(q_global, {
+            let data = NSData(contentsOfURL: photo.thumbnailURL!)
+            dispatch_async(q_main, {
+                self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
+                self.imageView!.image = UIImage(data: data!)
+                self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                self.setNeedsLayout()
+            })
+        })
         
         return self
     }
