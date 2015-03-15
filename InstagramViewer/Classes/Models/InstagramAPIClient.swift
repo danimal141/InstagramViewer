@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class InstagramAPIClient: NSObject {
     let url = "https://api.instagram.com/v1/media/popular"
-    let param = ["client_id": "11ac3c059a804539b3855464dd7660b4"]
+    let param = ["client_id": "11ac3c059a804539b3855464dd7660b4"] //Don't play a trick!!
     
     class func sharedClient() -> InstagramAPIClient {
         struct Singleton {

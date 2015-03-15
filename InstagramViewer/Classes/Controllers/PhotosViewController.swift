@@ -63,7 +63,6 @@ class PhotosViewController: UITableViewController {
             if error != nil { println(error) }
             
             self.tableView.reloadData()
-            self.tableView.setNeedsLayout()
             self.refreshControl?.endRefreshing()
         })
     }

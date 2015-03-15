@@ -36,7 +36,7 @@ class PhotoManager: NSObject {
         InstagramAPIClient.sharedClient().getPopular({ (json, error) in
             if error == nil {
                 if let array = json!["data"].array {
-                    self.photoList = array.map({ (elem: JSON) in self.parseData(elem)})
+                    self.photoList = array.map({ (elem: JSON) in self.parseData(elem) })
                     completionHandler?(nil)
                 }
             } else {

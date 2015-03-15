@@ -34,6 +34,7 @@ class PhotoViewCell: UITableViewCell {
     
     func configure(photo: Photo) -> PhotoViewCell {
         self.textLabel?.text = photo.caption?.text
+        self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         let q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         let q_main = dispatch_get_main_queue()
@@ -42,12 +43,9 @@ class PhotoViewCell: UITableViewCell {
             dispatch_async(q_main, {
                 self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
                 self.imageView!.image = UIImage(data: data!)
-                self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 self.setNeedsLayout()
             })
         })
-        
         return self
     }
-    
 }
