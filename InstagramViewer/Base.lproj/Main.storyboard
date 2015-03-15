@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Popular Photos-->
+        <!--Photos-->
         <scene sceneID="PFB-Yf-7y4">
             <objects>
                 <tableViewController id="9wo-Zd-RRA" customClass="PhotosViewController" customModule="InstagramViewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,6 +18,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUO-IL-wKl" id="Dwf-xj-72B">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="NOm-Vm-1JR" kind="show" identifier="OpenPhotoSegue" id="s6J-Re-0iv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -25,11 +28,45 @@
                             <outlet property="delegate" destination="9wo-Zd-RRA" id="iff-NZ-23e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Popular Photos" id="ajr-b1-mC7"/>
+                    <navigationItem key="navigationItem" title="Photos" id="ajr-b1-mC7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXy-Xu-jD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1413" y="375"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="m2M-Ax-lJ8">
+            <objects>
+                <viewController id="NOm-Vm-1JR" customClass="PhotoViewController" customModule="InstagramViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qVi-vi-WLD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZG8-YL-f9h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LMQ-fK-8rf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-Lb-keE">
+                                <rect key="frame" x="140" y="140" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="9VY-HH-bfp"/>
+                                    <constraint firstAttribute="width" constant="320" id="vAu-5h-Ess"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="cc6-Lb-keE" secondAttribute="centerY" id="cNG-tL-JQz"/>
+                            <constraint firstAttribute="centerX" secondItem="cc6-Lb-keE" secondAttribute="centerX" id="ogB-gW-8L1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="standardImage" destination="cc6-Lb-keE" id="3ub-py-GRT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzV-Jy-uXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071" y="378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4qB-Z3-5TA">
